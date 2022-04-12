@@ -10,6 +10,10 @@ leading_substrings('xyzzy') == ['x', 'xy', 'xyz', 'xyzz', 'xyzzy']
 
 
 
+
+
+
+
 def leading_substrings(str)
   results = []
   str_total = ''
