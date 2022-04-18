@@ -7,6 +7,54 @@
 # Look at how to initialize a Date object
 # Look at the friday? method
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def friday_13th(year)
   require 'date'
   results = []

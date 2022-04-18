@@ -17,6 +17,54 @@
 
 # featured(9_999_999_999) # -> There is no possible number that fulfills those requirements
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def featured(num)
   num += 1
   num += 1 until num.odd? && num % 7 == 0

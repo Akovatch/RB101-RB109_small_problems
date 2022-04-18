@@ -26,6 +26,47 @@
 # triangle(0, 90, 90) == :invalid
 # triangle(50, 50, 50) == :invalid
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def triangle(angle1, angle2, angle3)
   arr = [angle1, angle2, angle3].sort
   case

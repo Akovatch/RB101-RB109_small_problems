@@ -56,6 +56,55 @@
 # bubble_sort!(array)
 # array == %w(Alice Bonnie Kim Pete Rachel Sue Tyler)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def bubble_sort!(arr) #OMG IT ACTUALLY WORKED!!!
   loop do
     sorted = true

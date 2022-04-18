@@ -17,6 +17,46 @@
 # letter_percentages('AbCd +Ef') == { lowercase: 37.5, uppercase: 37.5, neither: 25.0 }
 # letter_percentages('123') == { lowercase: 0.0, uppercase: 0.0, neither: 100.0 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # My solution: Pass string through letter_case_count method, get a sum of the values, and then
 # use map to turn the values of the hash into percentages (note the required brackets in the map block)
 

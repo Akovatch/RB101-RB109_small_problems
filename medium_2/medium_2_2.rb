@@ -21,6 +21,52 @@
 # and the block that matched was added into a results array. At the end the expression results == results.uniq checked
 # if any of the blocks were duplicated.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 BLOCKS = [['B', 'O'], ['X', 'K'], ['D', 'Q'], ['C', 'P'], ['N', 'A'],
 ['G', 'T'], ['R', 'E'], ['F', 'S'], ['J', 'W'], ['H', 'U' ],
 ['V', 'I'], ['L', 'Y'], ['Z', 'M']]

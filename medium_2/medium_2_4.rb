@@ -17,6 +17,57 @@
 
 # Note that balanced pairs must each start with a (, not a ).
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # My solution: Each method iterates over each character, adding 1 to sum for '(' and subtracting for ').'
 # The result is triggered to false if the sum goes below 0 (')' coming before '('), or if the sum is
 # not equal to 0 after each method is done iterating (unbalanced). It worked!

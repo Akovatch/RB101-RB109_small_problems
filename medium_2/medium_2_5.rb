@@ -22,6 +22,49 @@
 # triangle(0, 3, 3) == :invalid
 # triangle(3, 1, 1) == :invalid
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # My solution: sort array, then use a case to check it against each condition. Note, the
 # case does not require a variable - it is unable to run the conditions with a variable.
 

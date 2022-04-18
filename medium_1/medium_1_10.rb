@@ -15,44 +15,6 @@
 # fibonacci_last(1_000_007) # -> 3 (this is a 208989 digit number)
 # fibonacci_last(123456789) # -> 4
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # this is the solution LS expected you to come up with...however, it is undable to compute the last digit past
 # the 1,000,000th number.
 
