@@ -48,42 +48,22 @@
 # fibonacci(12) == 144
 # fibonacci(20) == 6765
 
+# input: integer representing the position in the fib sequence
+# output: integer representing the num at that pos
+# rules: must use recursion
+# alg:
+  # handle num below 2
+  # break condition: num <= 2
 
+  def fibonacci(nth)
+    return 1 if nth <= 2
+    fibonacci(nth - 1) + fibonacci(nth - 2)
+  end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def fibonacci(nth)
-  return 1 if nth <= 2
-  fibonacci(nth - 1) + fibonacci(nth - 2)
-end
-
-p fibonacci(6)
+fibonacci(1) == 1
+fibonacci(2) == 1
+fibonacci(3) == 2
+fibonacci(4) == 3
+fibonacci(5) == 5
+fibonacci(12) == 144
+fibonacci(20) == 6765
