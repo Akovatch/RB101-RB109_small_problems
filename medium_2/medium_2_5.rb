@@ -22,17 +22,6 @@
 # triangle(0, 3, 3) == :invalid
 # triangle(3, 1, 1) == :invalid
 
-# input: 3 numbers
-# output: symbol
-# alg:
-  # put the sides in an array and sort
-  # case:
-    # invalid branch: side1 and side2 are greater than side 3
-    # equilateral: all equal
-    # isoceles: 2 equal
-    # else: scalene
-
-
 def triangle(side1, side2, side3)
   sides = [side1, side2, side3].sort
   case
