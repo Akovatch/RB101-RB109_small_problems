@@ -17,62 +17,12 @@
 # floating point errors. You may also assume that the arguments are
 # specified in degrees.
 
-# Examples:
-
-# Copy Code
-# triangle(60, 70, 50) == :acute
-# triangle(30, 90, 60) == :right
-# triangle(120, 50, 10) == :obtuse
-# triangle(0, 90, 90) == :invalid
-# triangle(50, 50, 50) == :invalid
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def triangle(angle1, angle2, angle3)
-  arr = [angle1, angle2, angle3].sort
+  angles = [angle1, angle2, angle3]
   case
-  when arr.sum != 180 || arr.include?(0) then :invalid
-  when arr.include?(90) then :right
-  when arr.any? { |side| side > 90 } then :obtuse
+  when angles.sum != 180 || angles.include?(0) then :invalid
+  when angles.include?(90) then :right
+  when angles.any? { |angle| angle > 90 } then :obtuse
   else :acute
   end
 end
@@ -83,20 +33,78 @@ p triangle(120, 50, 10) == :obtuse
 p triangle(0, 90, 90) == :invalid
 p triangle(50, 50, 50) == :invalid
 
-# LS solution: almost identical to mine:
 
-def triangle(angle1, angle2, angle3)
-  angles = [angle1, angle2, angle3]
 
-  case
-  when angles.reduce(:+) != 180, angles.include?(0)
-    :invalid
-  when angles.include?(90)
-    :right
-  when angles.all? { |angle| angle < 90 }
-    :acute
-  else
-    :obtuse
-  end
-end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def triangle(angle1, angle2, angle3)
+#   arr = [angle1, angle2, angle3].sort
+#   case
+#   when arr.sum != 180 || arr.include?(0) then :invalid
+#   when arr.include?(90) then :right
+#   when arr.any? { |side| side > 90 } then :obtuse
+#   else :acute
+#   end
+# end
+
+# p triangle(60, 70, 50) == :acute
+# p triangle(30, 90, 60) == :right
+# p triangle(120, 50, 10) == :obtuse
+# p triangle(0, 90, 90) == :invalid
+# p triangle(50, 50, 50) == :invalid
+
+# # LS solution: almost identical to mine:
+
+# def triangle(angle1, angle2, angle3)
+#   angles = [angle1, angle2, angle3]
+
+#   case
+#   when angles.reduce(:+) != 180, angles.include?(0)
+#     :invalid
+#   when angles.include?(90)
+#     :right
+#   when angles.all? { |angle| angle < 90 }
+#     :acute
+#   else
+#     :obtuse
+#   end
+# end
 
