@@ -78,82 +78,29 @@
 # minilang('6 PUSH')
 # # (nothing printed; no PRINT commands)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def minilang(str)
-  commands = str.split
+def minilang(string)
   stack = []
   register = 0
-
-  commands.map! do |command| # conversion of string-numbers to integers
-    command.to_i.to_s == command ? command.to_i : command
-  end
-
-  commands.each do |command|
+  string.split.each do |command|
     case command
-    when Integer
-      register = command
     when 'PUSH' then stack << register
     when 'ADD' then register += stack.pop
     when 'SUB' then register -= stack.pop
     when 'MULT' then register *= stack.pop
     when 'DIV' then register /= stack.pop
     when 'MOD' then register %= stack.pop
-    when 'POP' then register = stack.pop
+    when 'POP' then  register = stack.pop
     when 'PRINT' then puts register
+    else register = command.to_i
     end
   end
 end
 
-# LS solution:
-
-def minilang(program)
-  stack = []
-  register = 0
-  program.split.each do |token|
-    case token
-    when 'ADD'   then register += stack.pop
-    when 'DIV'   then register /= stack.pop
-    when 'MULT'  then register *= stack.pop
-    when 'MOD'   then register %= stack.pop
-    when 'SUB'   then register -= stack.pop
-    when 'PUSH'  then stack.push(register)
-    when 'POP'   then register = stack.pop
-    when 'PRINT' then puts register
-    else              register = token.to_i
-    end
-  end
-end
+minilang('PRINT')
+minilang('5 PUSH 3 MULT PRINT')
+minilang('5 PRINT PUSH 3 PRINT ADD PRINT')
+minilang('5 PUSH POP PRINT')
+minilang('3 PUSH 4 PUSH 5 PUSH PRINT ADD PRINT POP PRINT ADD PRINT')
+minilang('3 PUSH PUSH 7 DIV MULT PRINT ')
+minilang('4 PUSH PUSH 7 MOD MULT PRINT ')
+minilang('-3 PUSH 5 SUB PRINT')
