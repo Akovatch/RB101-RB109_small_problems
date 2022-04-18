@@ -13,10 +13,22 @@
 
 # You may assume that n is always a positive integer.
 
+def rotate_rightmost_digits(num, n)
+  num = num.to_s.chars
+  num[-n..-1] = rotate_array(num[-n..-1])
+  num.join.to_i
+end
 
+def rotate_array(array)
+  array[1..-1] << array[0]
+end
 
-
-
+p rotate_rightmost_digits(735291, 1) == 735291
+p rotate_rightmost_digits(735291, 2) == 735219
+p rotate_rightmost_digits(735291, 3) == 735912
+p rotate_rightmost_digits(735291, 4) == 732915
+p rotate_rightmost_digits(735291, 5) == 752913
+p rotate_rightmost_digits(735291, 6) == 352917
 
 
 
@@ -65,14 +77,5 @@ def rotate_rightmost_digits(num, digits)
 end
 
 def rotate_array(array)
-  array[1..-1] + [array[0]]
-end
-
-# LS solution: assigning a slice of an array to the return value of itself after being run through
-# the rotate array method...all on one line. In essence, replacing a slice through reassignment.
-
-def rotate_rightmost_digits(number, n)
-  all_digits = number.to_s.chars
-  all_digits[-n..-1] = rotate_array(all_digits[-n..-1])
-  all_digits.join.to_i
+  array[1..-1] + array[0..0]
 end
