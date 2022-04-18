@@ -17,72 +17,14 @@
 
 # Note that balanced pairs must each start with a (, not a ).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# My solution: Each method iterates over each character, adding 1 to sum for '(' and subtracting for ').'
-# The result is triggered to false if the sum goes below 0 (')' coming before '('), or if the sum is
-# not equal to 0 after each method is done iterating (unbalanced). It worked!
-
 def balanced?(str)
-  str_arr = str.chars
   sum = 0
-  result = true
-  str_arr.each do |char|
+  str.chars.each do |char|
     sum += 1 if char == '('
     sum -= 1 if char == ')'
-    result = false if sum < 0
+    return false if sum < 0
   end
-  result = false if sum != 0
-  result
+  sum == 0
   end
 
 p balanced?('What (is) this?') == true
@@ -96,13 +38,13 @@ p balanced?('What ((is))) up(') == false
 
 # LS solution: essentially the same logic as my solution, but uses zero? method
 
-def balanced?(string)
-  parens = 0
-  string.each_char do |char|
-    parens += 1 if char == '('
-    parens -= 1 if char == ')'
-    break if parens < 0
-  end
+# def balanced?(string)
+#   parens = 0
+#   string.each_char do |char|
+#     parens += 1 if char == '('
+#     parens -= 1 if char == ')'
+#     break if parens < 0
+#   end
 
-  parens.zero?
-end
+#   parens.zero?
+# end
