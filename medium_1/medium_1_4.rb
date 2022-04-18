@@ -22,18 +22,6 @@
 # With 10 lights, 3 lights are left on: lights 1, 4, and 9.
 # The return value is [1, 4, 9].
 
-# input: int (total of swtiches)
-# output: array indicating which lights are still on
-# rules: will be a valid input
-# alg:
-  # init hash (Hash.new(0))
-  # generate values for hash (times)
-    # key will be numbers, values will be booleans
-  # iterate over hash (upto)
-    # iterate over hash
-    # if key matches number we will swtich the boolean (value)
-  # select the keys that have values of true
-
   def toggle_lights(num)
     lights = {}
       1.upto(num) { |n| lights[n] = false }
