@@ -17,72 +17,31 @@
 # block_word?('BUTCH') == false
 # block_word?('jest') == true
 
-# My solution: I turned the blocks into nested arrays. For each character of the word, I iterated through the blocks
-# and the block that matched was added into a results array. At the end the expression results == results.uniq checked
-# if any of the blocks were duplicated.
+# input: single word string
+# output: boolean
+# rules:
+  # case-insensitive
+  # each 'block' can only be used once
+# alg:
+  # create an array of blocks
+  # iterate through blocks
+    # find count of block occurrence in word
+    # if count is greater than 1, return false
+  # return true otherwise
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-BLOCKS = [['B', 'O'], ['X', 'K'], ['D', 'Q'], ['C', 'P'], ['N', 'A'],
-['G', 'T'], ['R', 'E'], ['F', 'S'], ['J', 'W'], ['H', 'U' ],
-['V', 'I'], ['L', 'Y'], ['Z', 'M']]
+BLOCKS = %w(BO XK DQ CP NA GT RE FS JW HU VI LY ZM)
 
 def block_word?(word)
-  chars = word.upcase.chars
-  results = []
-  chars.each do |char|
-    blocks.each do |block|
-      results << block if block[0] == char || block[1] == char
-    end
+  BLOCKS.each do |block|
+   return false if word.upcase.count(block) > 1
   end
-  results == results.uniq
+  true
 end
 
-p block_word?('borat')
+p block_word?('BATCH') == true
+p block_word?('BUTCH') == false
+p block_word?('jest') == true
 
 # LS solution: uses the none? method (opposite of all?), and count method.
 # Passes the blocks as two-character words into the count method as an
