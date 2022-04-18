@@ -2,6 +2,41 @@
 # where n is an odd integer that is supplied as an argument to the method.
 # You may assume that the argument will always be an odd integer.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def return_stars(num)
   '*' * num
 end

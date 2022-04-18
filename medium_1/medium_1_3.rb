@@ -20,6 +20,52 @@
 # max_rotation(8_703_529_146) == 7_321_609_845
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def max_rotation(num)
   counter = num.to_s.length
   while counter >= 2

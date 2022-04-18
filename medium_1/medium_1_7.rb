@@ -87,6 +87,40 @@ end
 # They also arrange their numers_array array so that each word can be easily
 # converted to its index number.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def word_to_digit(input_string)
   numbers_arr = %w(zero one two three four five six seven eight nine)
   words_arr = input_string.split(/\b/)

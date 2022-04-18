@@ -78,16 +78,40 @@
 # minilang('6 PUSH')
 # # (nothing printed; no PRINT commands)
 
-# PC
-# Input: String of numbers and commands
-#  - convert this into an array
 
-# stack variable initalized to an empty array
-# register variable initialized to 0
 
-# interate over array, passing each element into a case
-#  Case
-#  - use a case to organize commands by branch - each is one branch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def minilang(str)
   commands = str.split

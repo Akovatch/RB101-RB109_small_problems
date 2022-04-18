@@ -22,6 +22,41 @@
 # With 10 lights, 3 lights are left on: lights 1, 4, and 9.
 # The return value is [1, 4, 9].
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def toggle_lights(n)
   lights = []
   n.times { lights << false } # I toggle between true and false
@@ -37,7 +72,7 @@ end
 p toggle_lights(10)
 
 
-# LS solution: 
+# LS solution:
 
 # initialize the lights hash
 def initialize_lights(number_of_lights)

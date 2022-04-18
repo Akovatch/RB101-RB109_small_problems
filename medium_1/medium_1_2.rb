@@ -13,6 +13,49 @@
 
 # You may assume that n is always a positive integer.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def rotate_rightmost_digits(num, digits)
   num_arr = num.to_s.chars
   digits_to_rotate = num_arr.pop(digits)
