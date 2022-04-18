@@ -22,58 +22,23 @@
 # triangle(0, 3, 3) == :invalid
 # triangle(3, 1, 1) == :invalid
 
+# input: 3 numbers
+# output: symbol
+# alg:
+  # put the sides in an array and sort
+  # case:
+    # invalid branch: side1 and side2 are greater than side 3
+    # equilateral: all equal
+    # isoceles: 2 equal
+    # else: scalene
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# My solution: sort array, then use a case to check it against each condition. Note, the
-# case does not require a variable - it is unable to run the conditions with a variable.
 
 def triangle(side1, side2, side3)
-  arr = [side1, side2, side3].sort
+  sides = [side1, side2, side3].sort
   case
-  when arr.any?(0) || arr[0] + arr[1] < arr[2] then :invalid
-  when arr[0] == arr[1] && arr[1] == arr[2] then :equilateral
-  when arr[0] == arr[1] || arr[1] == arr[2] then :isosceles
+  when sides[0] + sides[1] <= sides[2] || sides.include?(0) then :invalid
+  when sides[0] == sides[1] && sides[1] == sides[2] then :equilateral
+  when sides[0] == sides[1] || sides[1] == sides[2] then :isosceles
   else :scalene
   end
 end
@@ -86,18 +51,18 @@ p triangle(3, 1, 1) == :invalid
 
 # LS Solution: basically the same as mine, but uses max rather than sort.
 
-def triangle(side1, side2, side3)
-  sides = [side1, side2, side3]
-  largest_side = sides.max
+# def triangle(side1, side2, side3)
+#   sides = [side1, side2, side3]
+#   largest_side = sides.max
 
-  case
-  when 2 * largest_side > sides.reduce(:+), sides.include?(0)
-    :invalid
-  when side1 == side2 && side2 == side3
-    :equilateral
-  when side1 == side2 || side1 == side3 || side2 == side3
-    :isosceles
-  else
-    :scalene
-  end
-end
+#   case
+#   when 2 * largest_side > sides.reduce(:+), sides.include?(0)
+#     :invalid
+#   when side1 == side2 && side2 == side3
+#     :equilateral
+#   when side1 == side2 || side1 == side3 || side2 == side3
+#     :isosceles
+#   else
+#     :scalene
+#   end
+# end
