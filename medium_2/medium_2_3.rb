@@ -17,95 +17,59 @@
 # letter_percentages('AbCd +Ef') == { lowercase: 37.5, uppercase: 37.5, neither: 25.0 }
 # letter_percentages('123') == { lowercase: 0.0, uppercase: 0.0, neither: 100.0 }
 
+# input: string
+# output: a hash of 3 pairs
+# rules:
+  # no empty strings as input
+# alg:
+  # init results hash - hard code
+  # split string into chars array
+  # iterate over chars
+    # 3 branch conditional: uppercase, lowercase, neither
+      # use regex in branch conditions
+      # if condition is satisfied, that branch increments its corresponding has pair
+  # get sum total of hash values (#values and #sum)
+  # iterate over hash, dividing the value by sum each total to get the ratio (* 100)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# My solution: Pass string through letter_case_count method, get a sum of the values, and then
-# use map to turn the values of the hash into percentages (note the required brackets in the map block)
-
-LOWERCASE = ('a'..'z').to_a
-UPPERCASE = ('A'..'Z').to_a
-
-def letter_percentages(str)
-  results = letter_case_count(str)
-  total_chars = results.values.sum.to_f
-  results.map { |key, value| [key, (value /= total_chars) * 100] }.to_h
-end
-
-def letter_case_count (str)
-  results = { lowercase: 0, uppercase: 0, neither: 0 }
-  str.chars.each do |char|
-    if LOWERCASE.include?(char)
+def letter_percentages(string)
+  results = {lowercase: 0.0, uppercase: 0.0, neither: 0.0}
+  string.chars.each do |char|
+    if char =~ /[a-z]/
       results[:lowercase] += 1
-    elsif UPPERCASE.include?(char)
+    elsif char =~ /[A-Z]/
       results[:uppercase] += 1
     else
       results[:neither] += 1
     end
   end
-  results
+  sum = results.values.sum
+  results.map { |key, value| [key, (value / sum) * 100] }.to_h
 end
 
 p letter_percentages('abCdef 123') == { lowercase: 50.0, uppercase: 10.0, neither: 40.0 }
 p letter_percentages('AbCd +Ef') == { lowercase: 37.5, uppercase: 37.5, neither: 25.0 }
 p letter_percentages('123') == { lowercase: 0.0, uppercase: 0.0, neither: 100.0 }
 
-# LS solution:
 
-def letter_percentages(string)
-  counts = {}
-  percentages = {}
-  characters = string.chars
-  length = string.length
+# # LS solution:
 
-  counts[:lowercase] = characters.count { |char| char =~ /[a-z]/ }
-  counts[:uppercase] = characters.count { |char| char =~ /[A-Z]/ }
-  counts[:neither] = characters.count { |char| char =~ /[^A-Za-z]/ }
+# def letter_percentages(string)
+#   counts = {}
+#   percentages = {}
+#   characters = string.chars
+#   length = string.length
 
-  calculate(percentages, counts, length)
+#   counts[:lowercase] = characters.count { |char| char =~ /[a-z]/ }
+#   counts[:uppercase] = characters.count { |char| char =~ /[A-Z]/ }
+#   counts[:neither] = characters.count { |char| char =~ /[^A-Za-z]/ }
 
-  percentages
-end
+#   calculate(percentages, counts, length)
 
-def calculate(percentages, counts, length)
-  percentages[:lowercase] = (counts[:lowercase] / length.to_f) * 100
-  percentages[:uppercase] = (counts[:uppercase] / length.to_f) * 100
-  percentages[:neither] = (counts[:neither] / length.to_f) * 100
-end
+#   percentages
+# end
+
+# def calculate(percentages, counts, length)
+#   percentages[:lowercase] = (counts[:lowercase] / length.to_f) * 100
+#   percentages[:uppercase] = (counts[:uppercase] / length.to_f) * 100
+#   percentages[:neither] = (counts[:neither] / length.to_f) * 100
+# end
