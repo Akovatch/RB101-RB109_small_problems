@@ -22,87 +22,25 @@
 # With 10 lights, 3 lights are left on: lights 1, 4, and 9.
 # The return value is [1, 4, 9].
 
+# input: int (total of swtiches)
+# output: array indicating which lights are still on
+# rules: will be a valid input
+# alg:
+  # init hash (Hash.new(0))
+  # generate values for hash (times)
+    # key will be numbers, values will be booleans
+  # iterate over hash (upto)
+    # iterate over hash
+    # if key matches number we will swtich the boolean (value)
+  # select the keys that have values of true
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def toggle_lights(n)
-  lights = []
-  n.times { lights << false } # I toggle between true and false
-  1.upto(n) do |n|
-    lights.each_with_index do |ele, idx|
-      lights[idx] = !ele if (idx + 1) % n == 0
+  def toggle_lights(num)
+    lights = {}
+      1.upto(num) { |n| lights[n] = false }
+    1.upto(num) do |n|
+      lights.each { |key, value| lights[key] = !value if key % n == 0 }
     end
-  end
-  selected_lights = lights.each_index.select { |idx| lights[idx] == true }
-  selected_lights.map { |ele| ele + 1 }
-end
-
-p toggle_lights(10)
-
-
-# LS solution:
-
-# initialize the lights hash
-def initialize_lights(number_of_lights)
-  lights = Hash.new
-  1.upto(number_of_lights) { |number| lights[number] = "off" }
-  lights
-end
-
-# return list of light numbers that are on
-def on_lights(lights)
-  lights.select { |_position, state| state == "on" }.keys
-end
-
-# toggle every nth light in lights hash
-def toggle_every_nth_light(lights, nth)
-  lights.each do |position, state|
-    if position % nth == 0
-      lights[position] = (state == "off") ? "on" : "off"
-    end
-  end
-end
-
-# Run entire program for number of lights
-def toggle_lights(number_of_lights)
-  lights = initialize_lights(number_of_lights)
-  1.upto(lights.size) do |iteration_number|
-    toggle_every_nth_light(lights, iteration_number)
+    lights.select { |key, value| value == true }.keys
   end
 
-  on_lights(lights)
-end
-
-p toggle_lights(1000)
+toggle_lights(10)
