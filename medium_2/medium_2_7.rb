@@ -7,64 +7,28 @@
 # Look at how to initialize a Date object
 # Look at the friday? method
 
+# p friday_13th(2015) == 3
+# p friday_13th(1986) == 1
+# p friday_13th(2019) == 2
 
+# alg:
+  # init month variable
+  # init friday_count variable
+  # loop from 1 to 12 (upto)
+    # initialize a new date with year and month as variables and 13 as day
+    # check if date is a Friday? If yes, friday_count += 1
+  # return friday_count
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+require 'date'
 
 def friday_13th(year)
-  require 'date'
-  results = []
+  friday_count = 0
   1.upto(12) do |month|
-    date = Date.new(year,month,13)
-    results << date.friday?
+   date = Date.new(year, month, 13)
+   friday_count += 1 if date.friday?
   end
-  results.count(true)
+  friday_count
 end
-
 
 p friday_13th(2015) == 3
 p friday_13th(1986) == 1
@@ -76,14 +40,14 @@ p friday_13th(2019) == 2
 # all Friday the 13ths in a given year. To do this is, we step through each
 # month of the year and look at the 13th of the month; if it's a Friday, we increment unlucky_count.
 
-require 'date'
+# require 'date'
 
-def friday_13th(year)
-  unlucky_count = 0
-  thirteenth = Date.civil(year, 1, 13)
-  12.times do
-    unlucky_count += 1 if thirteenth.friday?
-    thirteenth = thirteenth.next_month
-  end
-  unlucky_count
-end
+# def friday_13th(year)
+#   unlucky_count = 0
+#   thirteenth = Date.civil(year, 1, 13)
+#   12.times do
+#     unlucky_count += 1 if thirteenth.friday?
+#     thirteenth = thirteenth.next_month
+#   end
+#   unlucky_count
+# end
