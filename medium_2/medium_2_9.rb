@@ -15,12 +15,14 @@
 # 2	6	1	7	4	Exchange
 # 2	6	1	7	4	7 > 4? Yes
 # 2	6	1	4	7	Exchange
+
 # 2	6	1	4	7	2 > 6? No
 # 2	6	1	4	7	6 > 1? Yes
 # 2	1	6	4	7	Exchange
 # 2	1	6	4	7	6 > 4? Yes
 # 2	1	4	6	7	Exchange
 # 2	1	4	6	7	6 > 7? No
+
 # 2	1	4	6	7	2 > 1? Yes
 # 1	2	4	6	7	Exchange
 # 1	2	4	6	7	2 > 4? No
@@ -56,65 +58,29 @@
 # bubble_sort!(array)
 # array == %w(Alice Bonnie Kim Pete Rachel Sue Tyler)
 
+# input: array
+# output: sorted (mutated) array
+# rules:
+  # compare two elements sequentially, loop over again and again until a sort free pass occurs
+  # array contains at least two elements
+# alg:
+  # outer loop that controls how many passes, break condition = a pass with no sorting
+    # init variable sorted to false
+  # inner loop (#each_with_index)
+    # iterate through array, comparing each element to the element with index + 1
+      # if element is greater than index + 1 element, parallel reassign them and set sorted to true
+  # break outer loop if sorted == false
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def bubble_sort!(arr) #OMG IT ACTUALLY WORKED!!!
+def bubble_sort!(arr)
   loop do
-    sorted = true
-    0.upto(arr.length - 2) do |index|
-      if arr[index] > arr[index + 1]
-        arr[index], arr[index + 1] = arr[index + 1], arr[index]
-        sorted = false
+    sorted = false
+    0.upto(arr.size - 2) do |n|
+      if arr[n] > arr[n + 1]
+        arr[n], arr[n + 1] = arr[n + 1], arr[n]
+        sorted = true
       end
     end
-    break if sorted == true
+    break if sorted == false
   end
   arr
 end
