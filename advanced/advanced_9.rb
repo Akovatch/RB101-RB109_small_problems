@@ -86,7 +86,8 @@
     # add 1.0 / num to sum
   # return sum
 
-# The key is using 'Rational(1, num)' rather than floats, as floats cause an infinite loop
+
+# My solution: the key is using 'Rational(1, num)' notation rather than floats. Floats cause an infinite loop
 # as these values are not precisely represented as floats
 
 def unegyptian(denominators)
@@ -97,7 +98,7 @@ def unegyptian(denominators)
   sum
 end
 
-def egyptian(rational) # yay! it works!
+def egyptian(rational)
   denominators = []
   sum = 0
   starting_num = 1
