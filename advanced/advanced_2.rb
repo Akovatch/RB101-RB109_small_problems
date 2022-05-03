@@ -30,7 +30,7 @@ end
 
 star(23)
 
-# LS solution: spaces are equal to distance from center - 1.
+# LS solution: spaces are equal to distance from center - 1. Also used a helper method.
 
 def print_row(grid_size, distance_from_center)
   number_of_spaces = distance_from_center - 1
